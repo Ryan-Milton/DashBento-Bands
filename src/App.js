@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   getBands() {
-    let url = "https://beta.dashbento.com/1.0/band";
+    let url = "https://dashbento-backend.herokuapp.com/1.0/band";
     superagent.get(url)
       .then(res => {
         this.setState({ bands: res.body.band });
