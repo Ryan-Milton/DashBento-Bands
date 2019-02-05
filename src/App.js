@@ -76,23 +76,14 @@ class App extends Component {
                 {this.state.albums.map( (item, i) =>(
                   <li key={i}>{item}</li>
                 ))}
-                <If condition={this.state.albums === undefined }>
-                  <li>Not Avaliable</li>
-                </If>
               <p>Management</p>
               {this.state.management.map( (item, i) =>(
                 <li key={i}>{item}</li>
               ))}
-                <If condition={this.state.management === undefined }>
-                  <li>Not Avaliable</li>
-                </If>
               <p>Members</p>
               {this.state.members.map( (item, i) =>(
                 <li key={i}>{item}</li>
               ))}
-                <If condition={this.state.members === undefined }>
-                  <li>Not Avaliable</li>
-                </If>
             </If>
             </div>
           </div>
