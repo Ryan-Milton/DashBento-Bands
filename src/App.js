@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import styles from './styles/bands.module.scss';
 
 import If from './components/if';
 
@@ -64,26 +65,32 @@ class App extends Component {
     if( this.state.bands !== null ) {
       return (
         <div className="App">
-          <div className='container'>
-            <div className='bands'>
+          <div className={styles.container}>
+            <div className={styles.bands}>
               {this.state.bands.map( (item, i) =>(
                 <button value={item.bandName} key={i} onClick={(e) => this.clicked(e)}>{item.bandName}</button>
               ))}
             </div>
-            <div className='info'>
+            <div className={styles.info}>
             <If condition={this.state.clicked}>
-              <p>Discography</p>
-                {this.state.albums.map( (item, i) =>(
-                  <li key={i}>{item}</li>
+              <div className={styles.albums}>
+                <p>Discography</p>
+                  {this.state.albums.map( (item, i) =>(
+                    <li key={i}>{item}</li>
                 ))}
-              <p>Management</p>
-              {this.state.management.map( (item, i) =>(
-                <li key={i}>{item}</li>
-              ))}
-              <p>Members</p>
-              {this.state.members.map( (item, i) =>(
-                <li key={i}>{item}</li>
-              ))}
+              </div>
+              <div className={styles.management}>
+                <p>Management</p>
+                  {this.state.management.map( (item, i) =>(
+                    <li key={i}>{item}</li>
+                ))}
+              </div>
+              <div className={styles.members}>
+                <p>Members</p>
+                  {this.state.members.map( (item, i) =>(
+                    <li key={i}>{item}</li>
+                ))}
+              </div>
             </If>
             </div>
           </div>

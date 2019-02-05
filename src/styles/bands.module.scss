@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 'bands info';
+  padding: 5em;
+
+  .bands {
+    grid-area: bands;
+    justify-self: center;
+
+    button {
+      border: 1px solid #2F518F;
+      border-radius: 5px;
+      color: white; 
+      cursor: pointer;
+      display: block;
+      margin: 1em;
+      padding: 1em 4em 1em 4em;
+    }
+
+    button:focus {
+      background-color: #4472C4;
+      outline: none;
+    }
+
+  }
+
+  .info {
+    grid-area: info;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'members albums'
+      'management .';
+
+    .albums {
+      grid-area: albums;
+    }
+
+    .management {
+      grid-area: management;
+    }
+
+    .members {
+      grid-area: members;
+    }
+
+  }
+
+}
